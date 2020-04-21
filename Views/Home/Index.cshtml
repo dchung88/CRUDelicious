@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUDelicious</title>
+</head>
+<body>
+
+    @using CRUDelicious_.Models
+    @model List<Dishes>
+    <h1>Welcome to CRUDelicious!</h1>
+
+        <h3>Check out some recent dishes!</h3>
+        <p>____________________________________________________________</p>
+
+        <ul>
+            @{
+                foreach(Dishes dish in Model)
+                {
+                    <li><a href="@dish.DishID">@dish.Name</a> by @dish.Chef</li>
+                }
+            }
+        </ul><br>
+
+    <a href="/add">Add a Dish</a>
+    
+</body>
+</html>
